@@ -1,0 +1,17 @@
+{
+    "name": "kerasai/lamp-env",
+    "description": "Environment detection utility.",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Kerasai\\LampEnv\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Will Long",
+            "email": "will@kerasai.com"
+        }
+    ],
+    "require": {}
+}
