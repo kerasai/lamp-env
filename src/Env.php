@@ -165,27 +165,4 @@ class Env {
     return array_filter($includes);
   }
 
-  /**
-   * Require the includes.
-   *
-   * @param string $directory
-   *   The directory containing the files.
-   * @param string $separator
-   *   Separator used to join filenames.
-   * @param string $extension
-   *   The extension to use for the file.
-   * @param string $prefix
-   *   Prefix to begin to the filename.
-   * @param string $suffix
-   *   Suffix to append to the filename.
-   */
-  public function requireIncludes(string $directory, $separator = '.', $extension = 'php', $prefix = 'settings', $suffix = '') {
-    $directory = rtrim($directory, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
-    foreach ($this->getIncludes($separator, $extension, $prefix, $suffix) as $include) {
-      if (is_readable($directory . $include)) {
-        require $directory . $include;
-      }
-    }
-  }
-
 }
