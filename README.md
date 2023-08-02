@@ -46,3 +46,30 @@ class Env extends BaseEnv {
 
 }
 ```
+
+### Drupal Settings File
+
+```
+<?php
+
+$env = \MyProject\Env\Env::create();
+
+foreach ($env->getIncludes() as $include) {
+  $filename = __DIR__ . '/' . $include;
+  if (file_exists($filename)) {
+    include $filename;
+  }
+}
+
+// Local settings overrides.
+if (file_exists(__DIR__ . '/settings.local.php')) {
+  include __DIR__ . '/settings.local.php';
+}
+```
+
+### Specific settings files
+
+* `settings.default.php`: Settings applicable to all environments
+* `settings.[mode].php`: Settings applicable to a type of environment (dev/test/live)
+* `settings.[host].php`: Settings applicable to a specific host (Lando, Pantheon, etc.)
+* `settings.[host].[mode].php`: Settings applicable to a type of environment on a specific host
