@@ -2,6 +2,8 @@
 
 namespace kerasai\LampEnv\Hosts;
 
+use kerasai\LampEnv\Env;
+
 /**
  * Trait to detect DDEV environments.
  */
