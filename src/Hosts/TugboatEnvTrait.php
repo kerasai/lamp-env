@@ -15,7 +15,7 @@ trait TugboatEnvTrait {
    * @return array|null
    *   The environment info.
    */
-  protected function detectDocksal() {
+  protected function detectTugboat() {
     if (getenv('TUGBOAT_ROOT')) {
       return [
         'env' => getenv('TUGBOAT_PREVIEW'),
