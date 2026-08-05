@@ -16,7 +16,8 @@ trait GithubActionsEnvTrait {
    *   The environment info.
    */
   protected function detectGithubActions() {
-    if (getenv('CI') === 'GITHUB') {
+    $env = getenv('GITHUB_ACTION');
+    if (!empty($env)) {
       return [
         'env' => getenv('GITHUB_WORKFLOW') . '--' . getenv('GITHUB_RUN_NUMBER'),
         'host' => 'github_actions',
